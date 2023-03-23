@@ -15,7 +15,7 @@
         {
             "id": 3,
             "name": "banana",
-            "price": "1.50",
+            "price": "1.00",
             "image": "https://cdn.pixabay.com/photo/2018/09/24/20/12/bananas-3700718_1280.jpg"
         },
         {
@@ -27,7 +27,7 @@
         {
             "id": 5,
             "name": "strawberry",
-            "price": "2.50",
+            "price": "2.00",
             "image": "https://cdn.pixabay.com/photo/2018/04/29/11/54/strawberries-3359755_1280.jpg"
         }
     ]
