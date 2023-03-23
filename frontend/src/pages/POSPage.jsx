@@ -24,7 +24,7 @@ function POSPage() {
     //fetch products from backend api
     const fetchProducts = async () => {
         setIsLoading(true)
-        const result = await axios.get('products')
+        const result = await axios.get("https://store-data-api.vercel.app/products")
         setProducts(await result.data)
         setIsLoading(false)
     }
