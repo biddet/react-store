@@ -9,6 +9,8 @@ function POSPage() {
     const [isLoading, setIsLoading] = useState(false)
     //state to hold cart
     const [cart, setCart] = useState([])
+    //state to hold total amount
+    const [totalAmount, setTotalAmount] = useState(0)
 
 
     //fetch products from backend api
@@ -63,6 +65,15 @@ function POSPage() {
         fetchProducts()
     }, [])
 
+    //calculate total amount
+    useEffect(() => {
+        let newTotalAmount = 0
+        cart.forEach(cartItem => {
+            newTotalAmount = newTotalAmount + parseInt(cartItem.totalAmount)
+        })
+        setTotalAmount(newTotalAmount)
+    }, [cart])
+
 
     return (
         <div>
@@ -108,6 +119,7 @@ function POSPage() {
                                     ) : "No products in cart"}                            
                                 </tbody>
                             </table>
+                            <h2 className="px-2 text-white">Total Amount: ${totalAmount.toFixed(2)}</h2>
                         </div>
                     </div>
                 </div>
