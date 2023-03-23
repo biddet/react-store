@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import MainLayout from '../layouts/MainLayout'
 import axios from 'axios'
+import { toast } from 'react-toastify';
 
 function POSPage() {
     //state to hold products
@@ -11,6 +12,11 @@ function POSPage() {
     const [cart, setCart] = useState([])
     //state to hold total amount
     const [totalAmount, setTotalAmount] = useState(0)
+
+    const toastOptions = {
+        autoClose : 500,
+        pauseOnHover: true,
+    }
 
 
     //fetch products from backend api
@@ -44,6 +50,7 @@ function POSPage() {
                 }
             })
             setCart(newCart)
+            toast(`${product.name} Added to cart`,toastOptions)
         }else{
             let addProduct = {
                 ...product,
@@ -51,6 +58,7 @@ function POSPage() {
                 "totalAmount": product.price
             }
             setCart([...cart, addProduct])
+            toast(`${product.name} Added to cart`, toastOptions)
         }
     }
 
