@@ -6,7 +6,7 @@ import { ComponentToPrint } from '../components/ComponentToPrint';
 import { useReactToPrint } from 'react-to-print';
 
 function POSPage() {
-    //state to hold products
+    //state to hold products retrieved from backend
     const [products, setProducts] = useState([])
     //state to hold loading status
     const [isLoading, setIsLoading] = useState(false)
@@ -15,6 +15,7 @@ function POSPage() {
     //state to hold total amount
     const [totalAmount, setTotalAmount] = useState(0)
 
+    //toast display options
     const toastOptions = {
         autoClose : 500,
         pauseOnHover: true,
@@ -28,6 +29,7 @@ function POSPage() {
         setProducts(await result.data)
         setIsLoading(false)
     }
+    
     
     const addProductToCart = async (product) => {
         //check if product is already in cart
