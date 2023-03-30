@@ -147,7 +147,7 @@ function POSPage() {
                                     ) : "No products in cart"}                            
                                 </tbody>
                             </table>
-                            <h2 className="px-2 text-white">Total Amount: ${totalAmount.toFixed(2)}</h2>
+                            <h2 className="px-2 text-white">Total Amount: ${totalAmount}</h2>
                         </div>
 
                         <div className="mt-3">
