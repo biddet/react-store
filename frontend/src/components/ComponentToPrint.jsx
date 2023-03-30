@@ -19,14 +19,17 @@ export const ComponentToPrint = React.forwardRef((props, ref) => {
                                     <tr key={key}>
                                         <td>{cartProduct.id}</td>
                                         <td>{cartProduct.name}</td>
-                                        <td>{cartProduct.price}</td>
+                                        {/* <td>{cartProduct.price}</td> */}
+                                        <td> ${(cartProduct.price / 100).toFixed(2)}</td>
                                         <td>{cartProduct.quantity}</td>
-                                        <td>{cartProduct.totalAmount}</td>
+                                        {/* <td>{cartProduct.totalAmount}</td> */}
+                                        <td> ${(cartProduct.totalAmount / 100).toFixed(2)}</td>
                                     </tr>
                                     ) : ""}                            
                                 </tbody>
                             </table>
-                            <h2 className="px-2">Total Amount: ${totalAmount.toFixed(2)}</h2>
+                            <h2 className="px-2">Total Amount: ${(totalAmount/100).toFixed(2)}</h2>
+                            
 
         </div>
     )
